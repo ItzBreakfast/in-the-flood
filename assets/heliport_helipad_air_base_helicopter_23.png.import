@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://cjmr0nyik2glj"
+path.s3tc="res://.godot/imported/heliport_helipad_air_base_helicopter_23.png-f758da933aa24f491e0535bc5af9317b.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "b5575829fd8a47a8ce5be2afb2e3cfd6"
+}
+
+[deps]
+
+source_file="res://assets/heliport_helipad_air_base_helicopter_23.png"
+dest_files=["res://.godot/imported/heliport_helipad_air_base_helicopter_23.png-f758da933aa24f491e0535bc5af9317b.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://assets/heliport_helipad_air_base_helicopter_23.png"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

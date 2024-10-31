@@ -8,9 +8,7 @@ var previous_tile := Vector3i.MAX
 @onready var water := $Water
 @onready var player := $"../Player"
 @onready var game_over := $"../UI/GameOver"
-@onready var flooded := $"../UI/GameOver/FLOODED"
-@onready var restart := $"../UI/GameOver/Restart"
-@onready var tint := $"../UI/GameOver/Tint"
+@onready var escaped := $"../UI/Escaped"
 
 func _init() -> void:
 	if Engine.is_editor_hint(): return
@@ -48,8 +46,8 @@ func _physics_process(_delta: float) -> void:
 		$WindAudioPlayer.volume_db = lerpf(0.0, -30.0, minf(total_wind_speed/15.0, 1.0))
 		$RainAudioPlayer.volume_db = -20
 		
+		escaped.visible = false
 		game_over.visible = true
-		restart.set("theme_override_colors/font_color", Color(1, 1, 1, 0))
 		
 		if Input.is_action_just_pressed("reset"):
 			water.global_position.y = -35
@@ -63,7 +61,18 @@ func _physics_process(_delta: float) -> void:
 			player.axis_lock_angular_x = false
 			
 			game_over.visible = false
+	elif player.global_position.y > 118.8:
+		$OceanAudioPlayer.volume_db = lerpf(-30.0, 5.0, minf(total_wind_speed/15.0, 1.0))
+		$WindAudioPlayer.volume_db = lerpf(0.0, -30.0, minf(total_wind_speed/15.0, 1.0))
+		$RainAudioPlayer.volume_db = -20
+		
+		escaped.visible = true
+		
+		if Input.is_action_just_pressed("reset"):
+			water.global_position.y = -35
+			player.position = player._resetPosition.position
 			
+			escaped.visible = false
 	else:
 		water.global_position.y += 0.01
 	
